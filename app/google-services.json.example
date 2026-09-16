@@ -1,0 +1,17 @@
+{
+  "project_info": {
+    "project_number": "replace-me",
+    "project_id": "replace-with-firebase-project-id",
+    "storage_bucket": "replace-with-firebase-project-id.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "replace-me",
+        "android_client_info": { "package_name": "com.terminus.app" }
+      },
+      "api_key": [ { "current_key": "replace-me" } ]
+    }
+  ],
+  "configuration_version": "1"
+}
