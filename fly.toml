@@ -1,0 +1,40 @@
+app = "terminus-rail-yourname"
+primary_region = "atl"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  BUNDLE_DAYS = "7"
+
+[processes]
+  api = "/app/server/bin/server"
+  worker = "/app/worker/bin/worker"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["api"]
+
+  [[http_service.checks]]
+    interval = "15s"
+    timeout = "3s"
+    grace_period = "15s"
+    method = "GET"
+    path = "/health"
+
+[[vm]]
+  processes = ["api"]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[[vm]]
+  processes = ["worker"]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

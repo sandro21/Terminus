@@ -1,0 +1,8 @@
+.git
+.gradle
+.idea
+**/build
+local.properties
+app/google-services.json
+firebase-service-account.json
+data
