@@ -1,7 +1,7 @@
 # Measurement checklist
 
-The implementation is complete, but the resume numbers must come from a physical Android device
-and the deployed worker. Do not replace these placeholders with estimates.
+The implementation is complete, but performance numbers must come from a physical Android device
+and the deployed worker. Do not replace placeholders with estimates.
 
 ## Offline render
 
@@ -23,14 +23,5 @@ downloaded schedule. In airplane mode, a station correctly has no departure rows
    from the device.
 4. Repeat for several alerts and report the median as `[PUSH_LATENCY_SECONDS]`.
 
-## Resume bullets
-
-> Built an Android app showing rail departures for Atlanta's 38 stations, working with no network
-> underground.
-
-> Moved delay polling to a Kotlin server worker deployed separately from the API, since Android
-> background limits made on-device scheduling unreliable, pushing alerts within
-> `[PUSH_LATENCY_SECONDS]s` of a reported delay.
-
-> Precomputed the GTFS schedule into a local index handling service exceptions and past-midnight
-> trips, rendering a station offline in `[OFFLINE_RENDER_MS]ms` where a live request never completed.
+Record the final results as `[OFFLINE_RENDER_MS]` and `[PUSH_LATENCY_SECONDS]` after completing the
+procedures above.
