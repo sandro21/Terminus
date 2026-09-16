@@ -9,4 +9,4 @@ app/google-services.json
 firebase-service-account.json
 *.jks
 *.keystore
-data/
+/data/
